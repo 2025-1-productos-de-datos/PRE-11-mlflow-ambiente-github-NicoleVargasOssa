@@ -19,16 +19,10 @@ def test_01():
         # )
         subprocess.run(
             [
-                "mlflow",
-                "run",
-                "https://github.com/jdvelasq/mlflow-wine-quality.git",
-                "-e",
-                "knn",
-                "-P",
-                "n_neighbors=5",
-                "--env-manager=local",
+                "source",
+                "run.sh",
             ],
-            check=True,
+            executable="/bin/bash",
         )
     except subprocess.CalledProcessError as e:
         raise Exception(f"Error running the homework script: {e}")
